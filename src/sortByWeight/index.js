@@ -6,9 +6,10 @@ export const sortByWeight = arr => {
 
   arr.forEach( element => {
     let priorityNumber = 0;
+    const base = 10;
     const elementSplited = element.split('');
-    elementSplited.forEach( element => {
-      priorityNumber += Number(element);
+    elementSplited.forEach( digit => {
+      priorityNumber += parseInt(digit, base);
     });
     arrWithPriority.push({
       'priority': priorityNumber,
